@@ -1,4 +1,4 @@
-###!/usr/bin/ruby
+#!/usr/bin/ruby
 
 ################
 
@@ -22,6 +22,7 @@ while i < 1000
 end
 
  mult_3 = numbers.select {|e| e % 3 == 0}
+ puts mult_3
 
  mult_5 = numbers.select {|e| e % 5 == 0}
 
@@ -30,6 +31,7 @@ end
  solo = merger.uniq.sort!
 
  solo_plus = solo.inject(:+)
+ puts solo
 
  puts "#{solo_plus}"
 
