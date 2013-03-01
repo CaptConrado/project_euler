@@ -11,17 +11,25 @@
 
 ###############
 
-@train = [0,1]
+
+@super_array =[]
+
 
 def fib set 
-
-	return puts "Fibonacci Result of #{set} sets is #{@train[1]}" unless set > 1;
+	train = [0,1]
+	return puts "Fibonacci Result of #{set} sets is #{train[1]}" unless set > 1;
 		set.times do 
-			next_num = @train[0] + @train[1]
-			@train.push(next_num).shift
+			next_num = train[0] + train[1]
+			train.push(next_num).shift
+			@super_array.push(next_num)
 		end
-		return puts "Fibonacci Result of #{set} sets is #{@train[1]}"
+		return puts "Fibonacci Result of #{set} sets is #{train[1]}"
 end 
+
+fib 10
+
+print @super_array 
+
 
 
 
