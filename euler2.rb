@@ -11,25 +11,29 @@
 
 ###############
 
+max_num = 4000000
+# max_num = 1000
 
-@super_array =[]
+def fib(n)
+  curr = 0
+  succ = 1
+
+  n.times do |i|
+    curr, succ = succ, curr + succ
+  end
+  return curr
+end
+
+iteration = 0
+total_number = fib(iteration)
 
 
-def fib set 
-	train = [0,1]
-	return puts "Fibonacci Result of #{set} sets is #{train[1]}" unless set > 1;
-		set.times do 
-			next_num = train[0] + train[1]
-			train.push(next_num).shift
-			@super_array.push(next_num)
-		end
-		return puts "Fibonacci Result of #{set} sets is #{train[1]}"
-end 
-
-fib 10
-
-print @super_array 
-
+until total_number >= max_num do
+	iteration = iteration + 1
+	puts "#{iteration} Iteration"
+	total_number = fib(iteration)
+	puts "The current number is #{total_number}"
+end
 
 
 
