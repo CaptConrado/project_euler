@@ -13,6 +13,7 @@
 
 max_num = 4000000
 # max_num = 1000
+quant_arr = []
 
 def fib(n)
   curr = 0
@@ -27,13 +28,30 @@ end
 iteration = 0
 total_number = fib(iteration)
 
-
-until total_number >= max_num do
+while total_number <= max_num do 
 	iteration = iteration + 1
-	puts "#{iteration} Iteration"
+
 	total_number = fib(iteration)
-	puts "The current number is #{total_number}"
+	quant_arr.push(total_number)
+
+	if total_number > max_num
+		break
+	end
+
 end
 
 
 
+even_quant_arr =  quant_arr.select {|e| e % 2 == 0}
+puts even_quant_arr
+
+puts even_quant_arr.inject(:+)
+
+
+##############
+
+# Answer: 4613732 #
+
+##############
+
+# @CaptConrado
